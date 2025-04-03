@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Yourself</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script> 
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <h2>Register Yourself!</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <label class="form-label" for="name">Name</label>
+                    <input class="textInput" type="text" id="name" placeholder="Enter your name">
+                    <div class="error" id="nameError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input class="textInput" type="email" id="email" placeholder="Enter your email">
+                    <div class="error" id="emailError"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input class="textInput" type="password" id="password" placeholder="Enter your password">
+                    <div class="error" id="passwordError"></div>
+                </div>
+
+                <div class="form-group">
+                    <p class="form-label">Gender</p>
+                    <div class="gender-options">
+                        <label class="gender-label">
+                            <input id="male-gender" type="radio" name="gender" value="male"> Male
+                        </label>
+                        <label class="gender-label">
+                            <input id="female-gender" type="radio" name="gender" value="female"> Female
+                        </label>
+                    </div>
+                    <div class="error" id="genderError"></div>
+                </div>
+                
+                <button type="submit" id="submit-button">Submit</button>
+            </form>
+
+            <div id="successMessage" class="success"></div>
+            <div id="errorMessage" class="error"></div>
+        </div>
+
+        <div class="image-container">
+            <img class="image-content" src="chiikawa.jpg" alt="Form Image">
+        </div>
+    </div>
+</body>
+</html>
