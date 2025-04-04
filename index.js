@@ -1,3 +1,4 @@
+// penulisan nama WAJIB minimal 3 karakter
 function validateName() {
     let name = document.getElementById("name").value;
     let nameError = document.getElementById("nameError");
@@ -10,6 +11,7 @@ function validateName() {
     }
 }
 
+// penulisan nama WAJIB dgn format email
 function validateEmail() {
     let email = document.getElementById("email").value;
     let emailError = document.getElementById("emailError");
@@ -23,6 +25,7 @@ function validateEmail() {
     }
 }
 
+// tambahan, penulisan password WAJIB min 8 characters
 function validatePassword() {
     let password = document.getElementById("password").value;
     let passwordError = document.getElementById("passwordError");
@@ -35,6 +38,7 @@ function validatePassword() {
     }
 }
 
+// WAJIB pilih salah 1 gender
 function validateGender() {
     let gender = document.getElementById("male-gender").checked || document.getElementById("female-gender").checked;
     let genderError = document.getElementById("genderError");
@@ -47,36 +51,54 @@ function validateGender() {
     }
 }
 
+// reset isi form & error2 kalau berhasil kesubmit
 function resetValue() {
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
     document.getElementById("password").value = "";
+    // kosongin error
     document.getElementById("nameError").textContent = "";
     document.getElementById("emailError").textContent = "";
     document.getElementById("passwordError").textContent = "";
     document.getElementById("errorMessage").textContent = "";
 }
 
+
+// munculnya tulisan sukses & error
 function showMessage(id, message, isSuccess = false) {
+  
+    document.getElementById("successMessage").style.display = "none";
+    document.getElementById("errorMessage").style.display = "none";
+
     let element = document.getElementById(id);
+
     if (message) {
         element.textContent = message;
         element.style.display = "block"; 
     } else {
-        element.style.display = "none"; 
+        element.style.display = "none";
     }
 }
 
+
+// fungsi kalau tombol "sumbit" ditekan
 function Register(event) {
     event.preventDefault();
+
+    // jalanin semua validasi
     let validName = validateName();
     let validEmail = validateEmail();
     let validPassword = validatePassword();
     let validGender = validateGender();
 
+    console.log(validName, validEmail, validPassword, validGender);
+
+    // kalau semua aman, muncullah kata2 sukses dan formnya direset
     if (validName && validEmail && validPassword && validGender) {
         showMessage("successMessage", "Form submitted successfully!", true);
         resetValue();
+
+    // kalau ada yang janggal, error
     } else {
         let errorMessage = "Please check the following fields: ";
         if (!validName) errorMessage += "Name, ";
@@ -89,11 +111,16 @@ function Register(event) {
     }
 }
 
+//  halam selesai dimuat --> add event listener
 document.addEventListener("DOMContentLoaded", function (e) {
+    // tombol submit ditekan
     document.getElementById("submit-button").addEventListener("click", Register);
+    // validasi nama, email, password
     document.getElementById("name").addEventListener("keyup", validateName);
     document.getElementById("email").addEventListener("keyup", validateEmail);
+    document.getElementById("password").addEventListener("keyup", validatePassword);
+ // validasi gender
     document.getElementById("male-gender").addEventListener("change", validateGender);
     document.getElementById("female-gender").addEventListener("change", validateGender);
-    document.getElementById("password").addEventListener("keyup", validatePassword);
+    
 });

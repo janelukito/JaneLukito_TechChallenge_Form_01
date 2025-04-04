@@ -1,3 +1,4 @@
+/* agar formnya ditengah layar, font juga dipilih disini */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -8,6 +9,7 @@ body {
     margin: 0;
 }
 
+/* encapsulate kedua form+image */
 .wrapper {
     display: flex;
     align-items: center;
@@ -21,21 +23,25 @@ body {
     gap: 40px;
 }
 
+/* container untuk form di kiri */
 .container {
     flex: 1;
     min-width: 350px;
 }
 
+/* setiap group input */
 .form-group {
     margin-bottom: 15px;
 }
 
+/* label untuk text */
 .form-label {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
 }
 
+/* tempat isi nama, email, password */
 .textInput {
     width: 100%;
     padding: 10px;
@@ -44,16 +50,19 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+/* ke unlock jika tempat isinya sudah diactivate (click) */
 .textInput:focus {
     border-color: #e033ac;
     outline: none;
 }
 
+/* pilihan gender */
 .gender-options {
     display: flex;
     gap: 10px;
 }
 
+/* styling untuk penulisan success sama errornya (excluding warna) */
 .success, .error {
     display: none; 
     font-size: 14px;
@@ -61,14 +70,16 @@ body {
     margin-top: 10px;
 }
 
+/* untuk warna */
 .success {
     color: rgb(10, 119, 10);
 }
-
+/* ini juga */
 .error {
     color: red;
 }
 
+/* tombol submit */
 #submit-button {
     width: 100%;
     padding: 12px;
@@ -80,10 +91,12 @@ body {
     transition: background 0.3s ease-in-out;
 }
 
+/* pergantian warna jika di hover */
 #submit-button:hover {
     background-color: #a00058;
 }
 
+/* container image di sebelah kanan formnya */
 .image-container {
     flex: 1;
     display: flex;
@@ -91,6 +104,7 @@ body {
     align-items: center;
 }
 
+/* imagenya */
 .image-content {
     width: 100%;
     max-width: 350px;

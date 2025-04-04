@@ -4,32 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Yourself</title>
+    <!-- link to css -->
     <link rel="stylesheet" href="./style.css">
-    <script defer src="./script.js"></script> 
+    <!-- link to js -->
+    <script defer src="./index.js"></script> 
 </head>
 <body>
+    <!-- wrapper encapsulate elemen yang ada -->
     <div class="wrapper">
+        <!-- container khusus untuk bagian form di kiri -->
         <div class="container">
             <h2>Register Yourself!</h2>
+            <!-- segmen form -->
             <form id="registration-form">
+                <!-- isi nama -->
                 <div class="form-group">
                     <label class="form-label" for="name">Name</label>
                     <input class="textInput" type="text" id="name" placeholder="Enter your name">
+                    <!-- kalau error -->
                     <div class="error" id="nameError"></div>
                 </div>
-                
+
+                 <!-- isi email -->
                 <div class="form-group">
                     <label class="form-label" for="email">Email</label>
                     <input class="textInput" type="email" id="email" placeholder="Enter your email">
+                     <!-- kalau error -->
                     <div class="error" id="emailError"></div>
                 </div>
                 
+                 <!-- tambahan, isi password -->
                 <div class="form-group">
                     <label class="form-label" for="password">Password</label>
                     <input class="textInput" type="password" id="password" placeholder="Enter your password">
+                     <!-- kalau error -->
                     <div class="error" id="passwordError"></div>
                 </div>
 
+                <!-- pilih gender -->
                 <div class="form-group">
                     <p class="form-label">Gender</p>
                     <div class="gender-options">
@@ -40,16 +52,20 @@
                             <input id="female-gender" type="radio" name="gender" value="female"> Female
                         </label>
                     </div>
+                     <!-- kalau error -->
                     <div class="error" id="genderError"></div>
                 </div>
                 
+                 <!-- submit button -->
                 <button type="submit" id="submit-button">Submit</button>
             </form>
-
+            
+             <!-- tulisan success dan error -->
             <div id="successMessage" class="success"></div>
             <div id="errorMessage" class="error"></div>
         </div>
 
+<!-- wcontainer khusus untuk bagian image di kanan -->
         <div class="image-container">
             <img class="image-content" src="chiikawa.jpg" alt="Form Image">
         </div>
